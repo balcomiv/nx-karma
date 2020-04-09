@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-karma/fundamentals-of-angular-testing": [
+        "libs/fundamentals-of-angular-testing/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

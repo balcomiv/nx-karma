@@ -18,5 +18,9 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "fundamentals-of-angular-testing": {
+      "tags": []
+    }
+  }
 }

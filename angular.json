@@ -1,7 +1,52 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "fundamentals-of-angular-testing": {
+      "projectType": "library",
+      "root": "libs/fundamentals-of-angular-testing",
+      "sourceRoot": "libs/fundamentals-of-angular-testing/src",
+      "prefix": "nx-karma",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/fundamentals-of-angular-testing/tsconfig.lib.json",
+              "libs/fundamentals-of-angular-testing/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/fundamentals-of-angular-testing/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/fundamentals-of-angular-testing/src/test.ts",
+            "tsConfig": "libs/fundamentals-of-angular-testing/tsconfig.spec.json",
+            "karmaConfig": "libs/fundamentals-of-angular-testing/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "karma",
+      "e2eTestRunner": "protractor"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "karma"
+    }
+  },
+  "defaultProject": "fundamentals-of-angular-testing"
 }
