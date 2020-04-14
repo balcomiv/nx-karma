@@ -5,7 +5,7 @@
       "projectType": "library",
       "root": "libs/fundamentals-of-angular-testing",
       "sourceRoot": "libs/fundamentals-of-angular-testing/src",
-      "prefix": "nx-karma",
+      "prefix": "app",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
